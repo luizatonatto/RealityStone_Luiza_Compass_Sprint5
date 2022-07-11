@@ -53,8 +53,8 @@ Funcionalidade: Home
         Exemplos:          
         |   "<categoria>" |          "<produto>"         |
         |                 |  Faded Short Sleeve T-shirts |
-        |     popular     |  Blouse                      |
-        |                 |  Printed Dress               |
+        |                 |  Blouse                      |
+        |     popular     |  Printed Dress               |
         |                 |  Printed Dress 2             |
         |                 |  Printed Summer Dress        |
         |                 |  Printed Summer Dress 2      |

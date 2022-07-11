@@ -5,55 +5,85 @@
 Funcionalidade: Login
   Como um usuário do site e-commerce "Automation Practice" 
   Quero poder acessar a página de Login
-  Para me cadastrar ou fazer login
+  Para fazer login
   E realizar compras
+
+  Contexto: Estar na página Authentication
+  Dado que o usuário tenha feito checkout da compra 
+  E esteja na página Authentication, do site e-commerce "Automation Practice" 
+
+  @login_via_checkout
+  Cenário: Realizar um login
+    Quando o usuário observar que está no step 02. Sign In
+    E visualizar uma box com escrita ALREADY REGISTERED?
+    Então ele deve realizar o login com "<e-mail" e "<password>" existentes
+    E o usuário visualizará uma mensagem "<msg>"
+
+    Exemplo:
+    |   <e-mail   | <password>|       <msg>               |
+    | teste@gm.com|   12345   | Authentication failed.    |
+    | teste@12.br |   123456  | Authentication failed.    |
+    |             |   123456  | An email address required.|
+    | teste@gm.com|           | Password is required.     |
+    | teste@gm.com|   123456  |                           | 
+
+
+    @recuperacao_password_via_checkout
+    Esquema do Cenário: Recuperar password por E-mail na página de checkout
+    Quando o usuário observar que está no step 02. Sign In
+    E clicar na funcionalidade "<funcionalidade>" da box 
+    Então deverá preencher o requisito do "<e-mail adress>" para recuperar a Password
+    E o usuário deverá visualizar a mensagem "<msg>"
+
+      Exemplo:
+
+      |  <funcionalidade>   |   <e-mail>    |                                <msg>                                                                              |
+      |                     |               |                                                                                                                   |
+      | Forgot My Password  |               | Invalid email address. Please enter the email address you used to register. We will then send you a new password. |                       
+      | Forgot My Password  |  1234@not.br  | There is no account registered for this email address.                                                            |
+      | Forgot My Password  |  teste@gm.com | A confirmation email has been sent to your address: teste@gm.com                                                  |
+
+
 
   Contexto: Estar no Login 
   Dado que esteja na página de login do site e-commerce "Automation Practice" 
 
-  @validacao_email
-  Cenário: Realizar um cadastro 
-    Quando realizar um cadastro na página de Login 
-    E preencher o campo de e-mail corretamente
-    Então o e-mail deverá ser aceito
+    @verificacao_recuperacao_password
+    Esquema do Cenário: Recuperar password por E-mail
+      Dado que o usuário esteja na página de Login
+      E clique na funcionalidade "<funcionalidade>" 
+      Quando se redigir a página Authentication
+      Então deverá preencher o requisito do "<e-mail adress>" para recuperar a Password
+      E o usuário visualizará a mensagem "<msg>"
 
-  @verificacao_password
-  Cenário: Realizar um cadastro 
-    Quando realizar um cadastro na página de Login 
-    E preencher o campo de password corretamente
-    Então a password deverá ser aceita
+      Exemplo:
 
-    @validacao_cadastro
-    Cenário: Realizar um cadastro 
-        Dado o e-mail for aceito
-        Quando a página for direcionada para YOUR PERSONAL INFORMATION
-        E forem cadastrado os dados: "<title>" "<first name>" "<last name>" "<e-mail>" "<password>"
-        "<date of birth>" "<adress>" "<city>" "<country>" "<state>" "<zipcode>" "<mobile phone>"
-        Então uma mensagem deve ser exibida "<msg>"
+      |  <funcionalidade>   |   <e-mail>    |                                <msg>                                                                              |
+      |                     |               |                                                                                                                   |
+      | Forgot My Password  |               | Invalid email address. Please enter the email address you used to register. We will then send you a new password. |                                                                                                         
+      | Forgot My Password  |  1234@not.br  | There is no account registered for this email address.                                                            |
+      | Forgot My Password  |  teste@gm.com | A confirmation email has been sent to your address: teste@gm.com                                                  |
 
-
-    Exemplos:
-    Cenário: preenchimento de dados
-    |  <title>     |<first name>| <last name>| <e-mail>   |<password>|<date of birth>|<adress>|<city>| <country>   |<state>|<zipcode>| <mobile phone> |<company>| <msg>                                                                                    |
-    |              |    julia   |  silva    |teste@gm.com|  123456  |   12/05/04    |  rua    | marau |united states| hawaii|  00000  | 88888888888   | compass | not obrigatory                                                                           |
-    |   mr/mrs     |            |  silva    |teste@gm.com|  123456  |   12/05/04    |  rua    | marau |united states| hawaii|  00000  | 88888888888   | compass | firstname is required.                                                                   |
-    |   mr/mrs     |    julia   |           |teste@gm.com|  123456  |   12/05/04    |  rua    | marau |united states| hawaii|  00000  | 88888888888   | compass | lastname is required.                                                                    |
-    |   mr/mrs     |    julia   |  silva    |            |  123456  |   12/05/04    |  rua    | marau |united states| hawaii|  00000  | 88888888888   | compass | email is required.                                                                       |
-    |   mr/mrs     |    julia   |  silva    |teste@gm.com|          |   12/05/04    |  rua    | marau |united states| hawaii|  00000  | 88888888888   | compass | passwd is required.                                                                      |
-    |   mr/mrs     |    julia   |  silva    |teste@gm.com|  123456  |               |  rua    | marau |united states| hawaii|  00000  | 88888888888   | compass | not obrigatory                                                                           |
-    |   mr/mrs     |    julia   |  silva    |teste@gm.com|  123456  |   12/05/04    |         | marau |united states| hawaii|  00000  | 88888888888   | compass | address1 is required.                                                                    |
-    |   mr/mrs     |    julia   |  silva    |teste@gm.com|  123456  |   12/05/04    |  rua    |       |united states| hawaii|  00000  | 88888888888   | compass | city is required                                                                         |
-    |   mr/mrs     |    julia   |  silva    |teste@gm.com|  123456  |   12/05/04    |  rua    | marau |             | hawaii|  00000  | 88888888888   | compass | id_country is required                                                                   | 
-    |   mr/mrs     |    julia   |  silva    |teste@gm.com|  123456  |   12/05/04    |  rua    | marau |united states|       |  00000  | 88888888888   | compass | This country requires you to choose a State.                                             |
-    |   mr/mrs     |    julia   |  silva    |teste@gm.com|  123456  |   12/05/04    |  rua    | marau |united states| hawaii|         | 88888888888   | compass | The Zip/Postal code you've entered is invalid. It must follow this format: 00000         |
-    |   mr/mrs     |    julia   |  silva    |teste@gm.com|  123456  |   12/05/04    |  rua    | marau |united states| hawaii|  00000  |               |         | not obrigatory                                                                           |
-    |   mr/mrs     |    julia   |  silva    |teste@gm.com|  123456  |   12/05/04    |  rua    | marau |united states| hawaii|  00000  | 88888888888   | compass | Welcome to your account. Here you can manage all of your personal information and orders.|
-
-      @verificacao_recuperacao_password
-      Esquema do Cenário: Recuperar password por e-mail
-        Quando clicar na vitrine de categoria "<categoria>" 
-        E escolher um produto exposto
-        Então deverá ser redirecionado para a página do produto "<produto>" 
+      @validacao_new_password
+      Esquema do Cenário: Validar uma nova password
+        Dado que o usuário esteja na página My Account
+        Quando clicar na funcionalidade "<funcionalidade>" 
+        E preencher os dados para validar uma nova Password: "<title>" "<first name>" "<last name>" "<e-mail>" 
+        "<password>" "<new password>" "<confirmation>" "<date of birth>" 
+        Então o usuário visualizará uma mensagem  "<msg>" 
 
 
-      
+       Exemplo: 
+   
+|      <funcionalidade>    |  <title>     |<first name>|<last name>| <e-mail>   |<password>|<new password|<confirmation>|<date of birth>|                   <msg>                                  |                                                                                                                   
+|  MY PERSONAL INFORMATION |              |    julia   |  silva    |teste@gm.com|  12345   |  123456     |    123456    |  12/05/04     | not obrigatory                                           |                                          
+|  MY PERSONAL INFORMATION |   mr/mrs     |            |  silva    |teste@gm.com|  12345   |  123456     |    123456    |  12/05/04     | firstname is required.                                   |
+|  MY PERSONAL INFORMATION |   mr/mrs     |    julia   |           |teste@gm.com|  12345   |  123456     |    123456    |  12/05/04     | lastname is required.                                    |                                                                                                                                                                                                                                               
+|  MY PERSONAL INFORMATION |   mr/mrs     |    julia   |  silva    |            |  12345   |  123456     |    123456    |  12/05/04     | This email address is not valid                          |                                                                                                          
+|  MY PERSONAL INFORMATION |   mr/mrs     |    julia   |  silva    |teste@gm.com|          |  123456     |    123456    |  12/05/04     | The password you entered is incorrect.                   |                                             
+|  MY PERSONAL INFORMATION |   mr/mrs     |    julia   |  silva    |teste@gm.com|  12345   |             |    123456    |               | The password and confirmation do not match               |       
+|  MY PERSONAL INFORMATION |   mr/mrs     |    julia   |  silva    |teste@gm.com|  12345   |  123456     |              |  12/05/04     | The password and confirmation do not match               |                                                         
+|  MY PERSONAL INFORMATION |   mr/mrs     |    julia   |  silva    |teste@gm.com|  12345   |  123456     |    123456    |               | not obrigatory                                           |                           
+|  MY PERSONAL INFORMATION |   mr/mrs     |    julia   |  silva    |teste@gm.com|  12345   |  123456     |    123456    |  12/05/04     | Your personal information has been successfully updated. |
+                                                                  
+
