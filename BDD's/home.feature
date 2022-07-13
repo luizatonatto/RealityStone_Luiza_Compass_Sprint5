@@ -1,4 +1,4 @@
-#Language PT
+#language: pt
 @regression
 @home
 
@@ -22,24 +22,12 @@ Funcionalidade: Home
     Então o tab da página passarará por cada item do início ao fim
 
       @verificacao_shop_window
-      Cenário: Acessar produtos da vitrine 
+      Esquema do Cenário: Acessar produtos da vitrine 
         Quando clicar em uma categoria da vitrine
         E escolher um produto exposto
         Então deverá ser redirecionado para a página do produto "<produto>"
 
-      @verificacao_shop_window_popular
-      Esquema do Cenário: Acessar produtos da vitrine popular 
-        Quando clicar na vitrine de categoria "<categoria>" 
-        E escolher um produto exposto
-        Então deverá ser redirecionado para a página do produto "<produto>" 
-
-      @verificacao_shop_window_best_sellers
-      Esquema do Cenário: Acessar produtos da vitrine best sellers
-        Quando clicar na vitrine de categoria "<categoria>" 
-        E escolher um produto exposto
-        Então deverá ser redirecionado para a página do produto "<produto>" 
-
-      Exemplos:          
+        Exemplos:          
         |          "<produto>"         |
         |  Faded Short Sleeve T-shirts |
         |  Blouse                      |
@@ -49,20 +37,31 @@ Funcionalidade: Home
         |  Printed Summer Dress 2      |
         |  Printed Chiffon Dress       |
 
+      @verificacao_shop_window_popular
+      Esquema do Cenário: Acessar produtos da vitrine popular 
+        Quando clicar na vitrine de categoria "<categoria>" 
+        E escolher um produto exposto
+        Então deverá ser redirecionado para a página do produto "<produto>" 
+
+        Exemplos:          
+        |          "<produto>"         |
+        |  Faded Short Sleeve T-shirts |
+        |  Blouse                      |
+        |  Printed Dress               |
+        |  Printed Dress 2             |
+        |  Printed Summer Dress        |
+        |  Printed Summer Dress 2      |
+        |  Printed Chiffon Dress       |
+
+      @verificacao_shop_window_best_sellers
+      Esquema do Cenário: Acessar produtos da vitrine best sellers
+        Quando clicar na vitrine de categoria "<categoria>" 
+        E escolher um produto exposto
+        Então deverá ser redirecionado para a página do produto "<produto>"
+
 
         Exemplos:          
         |   "<categoria>" |          "<produto>"         |
-        |                 |  Faded Short Sleeve T-shirts |
-        |                 |  Blouse                      |
-        |     popular     |  Printed Dress               |
-        |                 |  Printed Dress 2             |
-        |                 |  Printed Summer Dress        |
-        |                 |  Printed Summer Dress 2      |
-        |                 |  Printed Chiffon Dress       |
-
-
-        Exemplos:          
-        |   "<categoria>" |          "<produto>"   
         |                 |  Printed Chiffon Dress       |
         |                 |  Faded Short Sleeve T-shirts |
         |   best sellers  |  Blouse                      |

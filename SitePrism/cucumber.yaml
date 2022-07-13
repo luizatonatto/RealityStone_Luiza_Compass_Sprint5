@@ -1,8 +1,0 @@
-default: -p prd
-default_hml: -p hml
-
-#ENVIIRONMENT
-hml: ENVIRONMENT="hml"
-prd: ENVIRONMENT="prd"
-
-headless: HEADLESS="true"

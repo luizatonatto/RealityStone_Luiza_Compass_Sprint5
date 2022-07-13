@@ -1,7 +1,7 @@
-#Language PT
+#language: pt
+
 @regression
 @cadastro
-
 Funcionalidade: Cadastro
   Como um usuário do site e-commerce "Automation Practice" 
   Quero poder acessar a página de Login
@@ -17,22 +17,20 @@ Funcionalidade: Cadastro
     E preencher o campo de e-mail corretamente
     Então o e-mail deverá ser aceito
 
-    @validacao_cadastro
-    Cenário: Realizar um cadastro 
-        Dado que o usuário cadastrou um e-mail com sucesso
-        Quando a página for direcionada para YOUR PERSONAL INFORMATION
-        E forem cadastrados os dados: "<title>" "<first name>" "<last name>" "<e-mail>" "<password>"
-        "<date of birth>" "<adress>" "<city>" "<country>" "<state>" "<zipcode>" "<mobile phone>" "<company>"
-        Então uma mensagem será exibida "<msg>"
+  @validacao_cadastro
+  Cenário: Realizar um cadastro 
+    Dado que o usuário cadastrou um e-mail com sucesso
+    Quando a página for direcionada para YOUR PERSONAL INFORMATION
+    E forem cadastrados os dados: "<title>" "<first name>" "<last name>" "<e-mail>" "<password>" "<date of birth>" "<adress>" "<city>" "<country>" "<state>" "<zipcode>" "<mobile phone>" "<company>"
+    Então uma mensagem será exibida "<msg>"
       
-    @validacao_cadastro_via_checkout
-    Cenário: Realizar um cadastro pelo Checkout
-        Dado que o usuário tenha um produto na página de Checkout 
-        E que o e-mail foi cadastrado com sucesso
-        Quando a página for direcionada para YOUR PERSONAL INFORMATION
-        E forem cadastrados os dados: "<title>" "<first name>" "<last name>" "<e-mail>" "<password>"
-        "<date of birth>" "<adress>" "<city>" "<country>" "<state>" "<zipcode>" "<mobile phone>" "<company>"
-        Então uma mensagem será exibida "<msg>"
+  @validacao_cadastro_via_checkout
+  Cenário: Realizar um cadastro pelo Checkout
+    Dado que o usuário tenha um produto na página de Checkout 
+    E que o e-mail foi cadastrado com sucesso
+    Quando a página for direcionada para YOUR PERSONAL INFORMATION
+    E forem cadastrados os dados: "<title>" "<first name>" "<last name>" "<e-mail>" "<password>" "<date of birth>" "<adress>" "<city>" "<country>" "<state>" "<zipcode>" "<mobile phone>" "<company>"
+    Então uma mensagem será exibida "<msg>"
 
 
     Exemplos:
