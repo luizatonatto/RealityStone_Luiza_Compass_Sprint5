@@ -1,11 +1,8 @@
 require_relative '../sections/header'
-#require_relative '../sections/register_sec'
 
 module Pages
     class Login < SitePrism::Page
         set_url '?controller=authentication&back=my-account'
-
-       # section :register, Sections::Register , 'register' 
         
         # login
         element :error_message, '[class="alert alert-danger"] li'
@@ -17,10 +14,10 @@ module Pages
 
         # recuperação senha
         element :forgot_pass, '#login_form > div > p.lost_password.form-group > a'
-        element :msg_forgot_pass, '[class="alert alert-danger"]'
+        element :msg_forgot_pass, '#center_column > div > div > ol > li'
         element :email_forgot_pass, '[id="email"]'
         element :btn_retrive_pass, '[class="submit"] [class="btn btn-default button button-medium"]'
-        element :msg_rec_pass, ' [class="box"] p'
+        element :msg_rec_pass, ' [class="box"] p' 
          
         # cadastro
         element :input_email_register, '[id="email_create"]'

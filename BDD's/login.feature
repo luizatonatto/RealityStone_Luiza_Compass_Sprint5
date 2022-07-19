@@ -25,7 +25,7 @@ Funcionalidade: Login
     | teste@12.br |   123456  | Authentication failed.    |
     |             |   123456  | An email address required.|
     | teste@gm.com|           | Password is required.     |
-    | teste@gm.com|   123456  |                           | 
+    | teste@gm.com|   123456  | Welcome to your account   | 
 
 
   @login_via_checkout
@@ -41,7 +41,7 @@ Funcionalidade: Login
     | teste@12.br |   123456  | Authentication failed.    |
     |             |   123456  | An email address required.|
     | teste@gm.com|           | Password is required.     |
-    | teste@gm.com|   123456  |                           | 
+    | teste@gm.com|   123456  | Welcome to your account   | 
 
 
     @recuperacao_password_via_checkout
@@ -58,6 +58,7 @@ Funcionalidade: Login
       | Forgot My Password  |               | Invalid email address. Please enter the email address you used to register. We will then send you a new password. |                       
       | Forgot My Password  |  1234@not.br  | There is no account registered for this email address.                                                            |
       | Forgot My Password  |  teste@gm.com | A confirmation email has been sent to your address: teste@gm.com                                                  |
+
 
     @verificacao_recuperacao_password
     Esquema do Cenário: Recuperar password por E-mail

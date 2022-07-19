@@ -31,3 +31,9 @@ Funcionalidade: Página do Produto
     Exemplos:
     |msg                                             |
     |Product successfully added to your shopping cart|
+
+    @deletar_produto__cart_checkout
+    Cenário: Adicionar produto ao carrinho pela pdp
+     Quando adicionar o produto ao carrinho
+     E o usuário for direcionado ao SHOPPING-CART SUMMARY
+     Então deverá deletar o produto do Cart

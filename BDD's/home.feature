@@ -21,54 +21,54 @@ Funcionalidade: Home
     Quando navegar com o botão tab pela extensão da Home 
     Então o tab da página passarará por cada item do início ao fim
 
-      @verificacao_shop_window
-      Esquema do Cenário: Acessar produtos da vitrine 
-        Quando clicar em uma categoria da vitrine
-        E escolher um produto exposto
-        Então deverá ser redirecionado para a página do produto "<produto>"
+  @verificacao_shop_window
+  Esquema do Cenário: Acessar produtos da vitrine 
+      Quando clicar em uma categoria da vitrine
+      E escolher um produto exposto
+      Então deverá ser redirecionado para a página do produto "<produto>"
 
-        Exemplos:          
-        |          "<produto>"         |
-        |  Faded Short Sleeve T-shirts |
-        |  Blouse                      |
-        |  Printed Dress               |
-        |  Printed Dress 2             |
-        |  Printed Summer Dress        |
-        |  Printed Summer Dress 2      |
-        |  Printed Chiffon Dress       |
+    Exemplos:          
+    |          "<produto>"         |
+    |  Faded Short Sleeve T-shirts |
+    |  Blouse                      |
+    |  Printed Dress               |
+    |  Printed Dress 2             |
+    |  Printed Summer Dress        |
+    |  Printed Summer Dress 2      |
+    |  Printed Chiffon Dress       |
 
-      @verificacao_shop_window_popular
-      Esquema do Cenário: Acessar produtos da vitrine popular 
-        Quando clicar na vitrine de categoria "<categoria>" 
-        E escolher um produto exposto
-        Então deverá ser redirecionado para a página do produto "<produto>" 
+  @verificacao_shop_window_popular
+  Esquema do Cenário: Acessar produtos da vitrine popular 
+    Quando clicar na vitrine de categoria "<categoria>" 
+    E escolher um produto exposto
+    Então deverá ser redirecionado para a página do produto "<produto>" 
 
-        Exemplos:          
-        |          "<produto>"         |
-        |  Faded Short Sleeve T-shirts |
-        |  Blouse                      |
-        |  Printed Dress               |
-        |  Printed Dress 2             |
-        |  Printed Summer Dress        |
-        |  Printed Summer Dress 2      |
-        |  Printed Chiffon Dress       |
+    Exemplos:          
+  | <categoria>  |          "<produto>"         |
+  |   popular    |  Faded Short Sleeve T-shirts |
+  |   popular    |  Blouse                      |
+  |   popular    |  Printed Dress               |
+  |   popular    |  Printed Dress 2             |
+  |   popular    |  Printed Summer Dress        |
+  |   popular    |  Printed Summer Dress 2      |
+  |   popular    |  Printed Chiffon Dress       |
 
-      @verificacao_shop_window_best_sellers
-      Esquema do Cenário: Acessar produtos da vitrine best sellers
-        Quando clicar na vitrine de categoria "<categoria>" 
-        E escolher um produto exposto
-        Então deverá ser redirecionado para a página do produto "<produto>"
+  @verificacao_shop_window_best_sellers
+  Esquema do Cenário: Acessar produtos da vitrine best sellers
+    Quando clicar na vitrine de categoria "<categoria>" 
+    E escolher um produto exposto
+    Então deverá ser redirecionado para a página do produto "<produto>"
 
 
-        Exemplos:          
-        |   "<categoria>" |          "<produto>"         |
-        |                 |  Printed Chiffon Dress       |
-        |                 |  Faded Short Sleeve T-shirts |
-        |   best sellers  |  Blouse                      |
-        |                 |  Printed Summer Dress        |
-        |                 |  Printed Dress               |
-        |                 |  Printed Summer Dress 2      |
-        |                 |  Printed Dress 2             |
+    Exemplos:          
+    |   "<categoria>" |          "<produto>"         |
+    |   best sellers  |  Printed Chiffon Dress       |
+    |   best sellers  |  Faded Short Sleeve T-shirts |
+    |   best sellers  |  Blouse                      |
+    |   best sellers  |  Printed Summer Dress        |
+    |   best sellers  |  Printed Dress               |
+    |   best sellers  |  Printed Summer Dress 2      |
+    |   best sellers  |  Printed Dress 2             |
       
 
 

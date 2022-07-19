@@ -28,7 +28,7 @@ Capybara.register_driver :my_chrome do |app|
     options.args << '--debug_levels=3'
     options.args << '--acceptInsecureCerts=true'
 
-    # Agradecimento/Créditos: Daniel, colega da Compass, que ajudou na criação desse pedaço do código l.14-27
+    # Agradecimento/Créditos: Daniel, colega da Compass, que ajudou na criação desse pedaço do código linha 16-29
     
     if ENV['HEADLESS']
         options.args << '--headless'

@@ -10,6 +10,7 @@ Quando('acessar a página do produto') do
   
   Então('deverá alterar a imagem apresentada na PDP') do
    expect(@product_page.main_image['src']).not_to eql @image_before
+   @product_page.wait_until_main_image_visible(wait: 4)
   end
 
 
@@ -27,4 +28,13 @@ Quando('acessar a página do produto') do
   
   Então('o usuário visualizará a mensagem de que o produto foi adicionado com sucesso {string}') do |msg|
     expect(@product_page.msg_sucess_cart.text).to eql msg
+  end
+
+  Quando('o usuário for direcionado ao SHOPPING-CART SUMMARY') do
+    @product_page.btn_checkout_cart.click
+  end
+  
+  Então('deverá deletar o produto do Cart') do
+    @product_page.btn_delete_cart.click
+    @product_page.wait_until_msg_cart_empty_visible(wait: 4)
   end

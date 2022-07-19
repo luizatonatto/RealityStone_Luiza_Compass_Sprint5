@@ -25,7 +25,6 @@ Então('o usuário visualizará a mensagem de sucesso {string}') do |msg|
   
   Então('deverá preencher o requisito do e-mail com {string} para recuperar a Password') do |email|
     @login_page.rec_pass(email)
-    @login_page.btn_retrive_pass.click
   end
   
   Então('o usuário visualizará a mensagem {string}') do |msg|

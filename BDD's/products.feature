@@ -70,7 +70,8 @@ Funcionalidade: Produtos
         Dado que o produto para compra já foi escolhido e adicionado ao Cart
         Quando o usuário clicar em Proceed Checkout pelo Cart flutuante 
         E for redirecionado a página Shopping-Cart Summary
-        Então o usuário deverá visualizar as informaçôes do "<produto>": "<description>" "<avail" "<unit_price>" "<qty>" "<total>" "<delete>" "<total_products>"  "<total_shipping>" "<total>" "<tax>" "<total>"
+        Então o usuário deverá visualizar as informaçôes do "<produto>": "<description>", "<avail", "<unit_price>", 
+        "<qty>", "<total>", "<delete>", "<total_products>", "<total_shipping>", "<total>", "<tax>", "<total>"
         E deverá clicar em Proceed to Checkout novamente
 
         Exemplos:          

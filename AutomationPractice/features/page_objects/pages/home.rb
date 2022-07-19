@@ -11,13 +11,5 @@ module Pages
         def search_for(product)
             header.click_and_input_text_for_search(product)
         end
-
-        #sections :products_home, Sections::Products, '[class="product-container"]'
-        #sections :products_home, Sections::Products, '[id="homefeatured"]'
-
-        def access_product_home(index)
-            products_home[index].name_home.click
-        end
-
     end
 end

@@ -10,6 +10,7 @@ module Pages
    
         def access_product_page(index)
             products[index].name.click
+
         end
     end
 end

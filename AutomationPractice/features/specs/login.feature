@@ -40,10 +40,9 @@ Para realizar compras
       E o usuário visualizará a mensagem "<msg>"
 
       Exemplos:
-      |email        | msg                                                                                                               |  
-      |teste        | Invalid email address. Please enter the email address you used to register. We will then send you a new password. |                                                                                                       
-      |1234@not.br  | There is no account registered for this email address.                                                            |
-                                                
+      |email        | msg                                                    |  
+      |teste        | Invalid email address.                                 |                                                                                                       
+      |1234@not.br  | There is no account registered for this email address. |                                           
       
       
  @verificacao_recuperacao_password_ok
@@ -54,8 +53,8 @@ Para realizar compras
       E o usuário visualizará a mensagem "<msg>" de sucesso
 
       Exemplos:
-      |email        | msg                                                                                                               |                                                       
-      |teste@gm.com | A confirmation email has been sent to your address: teste@gm.com                                                  |
+      |email        | msg                                                               |                                                       
+      |teste@gm.com | A confirmation email has been sent to your address: teste@gm.com  |
       
    
     
