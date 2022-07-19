@@ -5,12 +5,12 @@ Quando('acessar a página do produto') do
   
   Quando('alterar a cor do produto') do
     @image_before = @product_page.main_image['src']
-    @product_page.colors[1].click
+    @product_page.colors[2].click
   end
   
   Então('deverá alterar a imagem apresentada na PDP') do
-   expect(@product_page.main_image['src']).not_to eql @image_before
-   @product_page.wait_until_main_image_visible(wait: 4)
+    expect(@product_page.main_image['src']).not_to eql @image_before
+    @product_page.wait_until_main_image_visible(wait: 4)
   end
 
 

@@ -31,7 +31,7 @@ Funcionalidade: Pagamento
     Quando logar na sua conta "<email>", "<password>" existente 
     E confirmar o endereço de entrega
     E selecionar o frete do produto
-    E selecionar a forma de pagamento por cheque "<payment_method_ywo>"
+    E selecionar a forma de pagamento por cheque "<payment_method_two>"
     Então o usuário deverá confirmar a sua compra e pagá-la
 
      Exemplos:
