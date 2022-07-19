@@ -1,35 +1,31 @@
-#language: pt
-@regression
-@login
 
-Funcionalidade: Login
-  Como um usuário do site e-commerce "Automation Practice" 
-  Quero poder acessar a página de Login
-  Para fazer login
-  E realizar compras
+'''
+Dado('que esteja na Home') do
+  @home_page = Pages::Home.new
+  @home_page.load
+end
 
-  Contexto: Estar na página Authentication
-  Dado que o usuário tenha feito checkout da compra 
-  E esteja na página Authentication, do site e-commerce "Automation Practice" 
+Quando('realizar uma search por um produto existente') do
+  @home_page.search_for("Dresses")
+  @search_results_page = Pages::SearchResults.new
+end
 
- @verificacaologin
+Então('deverá ser retornado o resultado da busca escolhida') do
+  @search_results_page 
+  expect(@search_results_page).to have_products
+  expect(@search_results_page.products.first.all_there?).to be_truthy
+end
+
+Quando('buscar pelo produto {string}') do |produto|
+  @home_page.search_for(produto)
+  @search_results_page = Pages::SearchResults.new
+end
+'''
+'''
+@login_via_checkout
   Cenário: Realizar um login
-    Quando o usuário observar que está no step 02. Sign In
-    E visualizar uma box com escrita ALREADY REGISTERED?
-    Então ele deve realizar o login com "<e-mail" e "<password>" existentes
-    E o usuário visualizará uma mensagem "<msg>"
-
-    Exemplos:
-    |   <e-mail   | <password>|       <msg>               |
-    | teste@gm.com|   12345   | Authentication failed.    |
-    | teste@12.br |   123456  | Authentication failed.    |
-    |             |   123456  | An email address required.|
-    | teste@gm.com|           | Password is required.     |
-    | teste@gm.com|   123456  |                           | 
-
-
-  @login_via_checkout
-  Cenário: Realizar um login
+    Dado que o usuário tenha feito checkout da compra 
+    E esteja na página Authentication
     Quando o usuário observar que está no step 02. Sign In
     E visualizar uma box com escrita ALREADY REGISTERED?
     Então ele deve realizar o login com "<e-mail" e "<password>" existentes
@@ -95,5 +91,4 @@ Funcionalidade: Login
       |  MY PERSONAL INFORMATION |   mr/mrs     |    julia   |  silva    |teste@gm.com|  12345   |  123456     |              |  12/05/04     | The password and confirmation do not match               |                                                         
       |  MY PERSONAL INFORMATION |   mr/mrs     |    julia   |  silva    |teste@gm.com|  12345   |  123456     |    123456    |               | not obrigatory                                           |                           
       |  MY PERSONAL INFORMATION |   mr/mrs     |    julia   |  silva    |teste@gm.com|  12345   |  123456     |    123456    |  12/05/04     | Your personal information has been successfully updated. |
-                                                                  
-
+      '''

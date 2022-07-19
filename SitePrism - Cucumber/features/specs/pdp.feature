@@ -1,7 +1,8 @@
-#Language PT
+#language: pt
 
 @regression
 @pdp
+
 Funcionalidade: Página do Produto
     Sendo um usuário do site e-commerce "" 
     Quero poder personalizar produtos que irei comprar na PDP
@@ -9,7 +10,7 @@ Funcionalidade: Página do Produto
 
     Contexto: Estar na Página do Produto
      Dado que esteja na Home
-     Quando realizar a busca por um produto existente
+     Quando realizar uma search por um produto existente
      E acessar a página do produto
 
     @mudar_colors_pdp

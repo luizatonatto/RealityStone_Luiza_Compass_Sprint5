@@ -1,0 +1,5 @@
+valid_product: "T-shirts"
+
+user_for_login:
+  email: 'teste@gm.com'
+  password: '123456'
